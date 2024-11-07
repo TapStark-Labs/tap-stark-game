@@ -3,6 +3,211 @@
  * You should not edit it manually or your changes might be overwritten.
  */
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  devnet: {
+    BettingContract: {
+      address:
+        "0x34fe57505f9486dd6c7084db73b8901d91fd07a98f5f98b82a0900125943ef4",
+      abi: [
+        {
+          type: "impl",
+          name: "BettingContract",
+          interface_name: "contracts::betting_game::IBettingContract",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::betting_game::IBettingContract",
+          items: [
+            {
+              type: "function",
+              name: "get_prize_pool",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "get_user_points",
+              inputs: [
+                {
+                  name: "user",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "place_bet",
+              inputs: [
+                {
+                  name: "bet_amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_prize",
+              inputs: [
+                {
+                  name: "user",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "get_remaining_allowance",
+              inputs: [
+                {
+                  name: "user",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "initial_backend_address",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "currency",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::betting_game::BettingContract::BetPlaced",
+          kind: "struct",
+          members: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "points_earned",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "remaining_allowance",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::betting_game::BettingContract::BettingApproved",
+          kind: "struct",
+          members: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::betting_game::BettingContract::PrizeTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "timestamp",
+              type: "core::integer::u64",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::betting_game::BettingContract::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "BetPlaced",
+              type: "contracts::betting_game::BettingContract::BetPlaced",
+              kind: "nested",
+            },
+            {
+              name: "BettingApproved",
+              type: "contracts::betting_game::BettingContract::BettingApproved",
+              kind: "nested",
+            },
+            {
+              name: "PrizeTransferred",
+              type: "contracts::betting_game::BettingContract::PrizeTransferred",
+              kind: "nested",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x1db01cffccc9648104accfc1e8705df7704534602cfaa78b44c2cecfff08d6",
+    },
+  },
+} as const;
 
 export default deployedContracts;
