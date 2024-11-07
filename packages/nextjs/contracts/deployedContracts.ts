@@ -5,14 +5,14 @@
 
 const deployedContracts = {
   devnet: {
-    BettingContract: {
+    bettingcontract: {
       address:
-        "0x752e9a00d790942f3265aa6cebf4eb5a9849a03c3f3a8c0cb62d4c2f448dac6",
+        "0x41c4b110bbbcd87e34c03720f82944da60f60f5f003ed8d84423bbe8b81c309",
       abi: [
         {
           type: "impl",
           name: "BettingContract",
-          interface_name: "contracts::betting_game::IBettingContract",
+          interface_name: "contracts::bettingcontract::IBettingContract",
         },
         {
           type: "struct",
@@ -30,7 +30,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "contracts::betting_game::IBettingContract",
+          name: "contracts::bettingcontract::IBettingContract",
           items: [
             {
               type: "function",
@@ -117,7 +117,7 @@ const deployedContracts = {
         },
         {
           type: "event",
-          name: "contracts::betting_game::BettingContract::BetPlaced",
+          name: "contracts::bettingcontract::BettingContract::BetPlaced",
           kind: "struct",
           members: [
             {
@@ -144,7 +144,7 @@ const deployedContracts = {
         },
         {
           type: "event",
-          name: "contracts::betting_game::BettingContract::BettingApproved",
+          name: "contracts::bettingcontract::BettingContract::BettingApproved",
           kind: "struct",
           members: [
             {
@@ -161,7 +161,7 @@ const deployedContracts = {
         },
         {
           type: "event",
-          name: "contracts::betting_game::BettingContract::PrizeTransferred",
+          name: "contracts::bettingcontract::BettingContract::PrizeTransferred",
           kind: "struct",
           members: [
             {
@@ -183,29 +183,29 @@ const deployedContracts = {
         },
         {
           type: "event",
-          name: "contracts::betting_game::BettingContract::Event",
+          name: "contracts::bettingcontract::BettingContract::Event",
           kind: "enum",
           variants: [
             {
               name: "BetPlaced",
-              type: "contracts::betting_game::BettingContract::BetPlaced",
+              type: "contracts::bettingcontract::BettingContract::BetPlaced",
               kind: "nested",
             },
             {
               name: "BettingApproved",
-              type: "contracts::betting_game::BettingContract::BettingApproved",
+              type: "contracts::bettingcontract::BettingContract::BettingApproved",
               kind: "nested",
             },
             {
               name: "PrizeTransferred",
-              type: "contracts::betting_game::BettingContract::PrizeTransferred",
+              type: "contracts::bettingcontract::BettingContract::PrizeTransferred",
               kind: "nested",
             },
           ],
         },
       ],
       classHash:
-        "0x1db01cffccc9648104accfc1e8705df7704534602cfaa78b44c2cecfff08d6",
+        "0x669f4b28586dc06d37acf35c926d59b4200e6094a7a0ceabdfcf4d3c96f1dc",
     },
   },
 } as const;

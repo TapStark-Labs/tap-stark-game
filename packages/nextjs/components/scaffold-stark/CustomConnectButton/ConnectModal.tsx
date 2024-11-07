@@ -9,6 +9,7 @@ import { BlockieAvatar } from "../BlockieAvatar";
 import GenericModal from "./GenericModal";
 import scaffoldConfig from "~~/scaffold.config";
 import { LAST_CONNECTED_TIME_LOCALSTORAGE_KEY } from "~~/utils/Constants";
+import router from "next/router";
 
 const loader = ({ src }: { src: string }) => {
   return src;
@@ -42,6 +43,8 @@ const ConnectModal = () => {
     e: React.MouseEvent<HTMLButtonElement>,
     connector: Connector,
   ): void {
+    console.log('clicked to connect');
+
     if (connector.id === "burner-wallet") {
       setIsBurnerWallet(true);
       return;
@@ -50,6 +53,7 @@ const ConnectModal = () => {
     setLastConnector({ id: connector.id });
     setLastConnectionTime(Date.now());
     handleCloseModal();
+    router.push("/game");
   }
 
   function handleConnectBurner(
